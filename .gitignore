@@ -1,0 +1,25 @@
+**/.cache/
+.cache/
+__pycache__/
+*.pyc
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Chặn shell scripts
+*.sh
+
+# Chặn môi trường, log và data
+wandb/
+runs/
+.env/
+venv/
+*.log
+data/
+datasets/
+
+.env
+.env.*

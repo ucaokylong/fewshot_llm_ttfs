@@ -1,0 +1,149 @@
+{
+    "full_ranking": [
+        {
+            "rank": 1,
+            "feature": "Age",
+            "mean_importance": 0.07217055636910845,
+            "std_importance": 0.06827297724536317
+        },
+        {
+            "rank": 2,
+            "feature": "BMI",
+            "mean_importance": 0.055906596171744795,
+            "std_importance": 0.032496755893574585
+        },
+        {
+            "rank": 3,
+            "feature": "Income",
+            "mean_importance": 0.0414183339695776,
+            "std_importance": 0.026200055461736683
+        },
+        {
+            "rank": 4,
+            "feature": "HighBP",
+            "mean_importance": 0.03790140244611902,
+            "std_importance": 0.03193628915810402
+        },
+        {
+            "rank": 5,
+            "feature": "HighChol",
+            "mean_importance": 0.03542475769438884,
+            "std_importance": 0.05162147543356237
+        },
+        {
+            "rank": 6,
+            "feature": "GenHlth",
+            "mean_importance": 0.034343654541371685,
+            "std_importance": 0.020760273957703614
+        },
+        {
+            "rank": 7,
+            "feature": "PhysHlth",
+            "mean_importance": 0.02843150282769017,
+            "std_importance": 0.02167190665039938
+        },
+        {
+            "rank": 8,
+            "feature": "Sex",
+            "mean_importance": 0.021562320916565878,
+            "std_importance": 0.027251333927009874
+        },
+        {
+            "rank": 9,
+            "feature": "PhysActivity",
+            "mean_importance": 0.021558639280500426,
+            "std_importance": 0.018348559567628632
+        },
+        {
+            "rank": 10,
+            "feature": "MentHlth",
+            "mean_importance": 0.021209775525248678,
+            "std_importance": 0.01501767562318109
+        },
+        {
+            "rank": 11,
+            "feature": "Education",
+            "mean_importance": 0.018430781972572453,
+            "std_importance": 0.009935167106657825
+        },
+        {
+            "rank": 12,
+            "feature": "Smoker",
+            "mean_importance": 0.0148607896458041,
+            "std_importance": 0.015257379640033255
+        },
+        {
+            "rank": 13,
+            "feature": "Fruits",
+            "mean_importance": 0.012989976055674826,
+            "std_importance": 0.009812964680383122
+        },
+        {
+            "rank": 14,
+            "feature": "DiffWalk",
+            "mean_importance": 0.011910199366054142,
+            "std_importance": 0.011001315830569108
+        },
+        {
+            "rank": 15,
+            "feature": "HeartDiseaseorAttack",
+            "mean_importance": 0.010582237301889244,
+            "std_importance": 0.01587157049170523
+        },
+        {
+            "rank": 16,
+            "feature": "Veggies",
+            "mean_importance": 0.009737139419740626,
+            "std_importance": 0.01361811456758092
+        },
+        {
+            "rank": 17,
+            "feature": "NoDocbcCost",
+            "mean_importance": 0.00501282154504739,
+            "std_importance": 0.008344651002367169
+        },
+        {
+            "rank": 18,
+            "feature": "Stroke",
+            "mean_importance": 0.0043882888298455896,
+            "std_importance": 0.007039415240935242
+        },
+        {
+            "rank": 19,
+            "feature": "HvyAlcoholConsump",
+            "mean_importance": 0.0020104828811237396,
+            "std_importance": 0.002568345377176532
+        },
+        {
+            "rank": 20,
+            "feature": "CholCheck",
+            "mean_importance": 0.0016351489085604648,
+            "std_importance": 0.0028938785148418865
+        },
+        {
+            "rank": 21,
+            "feature": "AnyHealthcare",
+            "mean_importance": 0.0009571446622637387,
+            "std_importance": 0.001772493258168948
+        }
+    ],
+    "top_5": [
+        "Age",
+        "BMI",
+        "Income",
+        "HighBP",
+        "HighChol"
+    ],
+    "top_10": [
+        "Age",
+        "BMI",
+        "Income",
+        "HighBP",
+        "HighChol",
+        "GenHlth",
+        "PhysHlth",
+        "Sex",
+        "PhysActivity",
+        "MentHlth"
+    ]
+}

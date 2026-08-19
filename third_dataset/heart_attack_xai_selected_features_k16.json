@@ -1,0 +1,173 @@
+{
+    "full_ranking": [
+        {
+            "rank": 1,
+            "feature": "Stress Level",
+            "mean_importance": 0.04950957559639024,
+            "std_importance": 0.09924169717706506
+        },
+        {
+            "rank": 2,
+            "feature": "Country",
+            "mean_importance": 0.04908550544920283,
+            "std_importance": 0.06556411247672497
+        },
+        {
+            "rank": 3,
+            "feature": "BMI",
+            "mean_importance": 0.028665636671555594,
+            "std_importance": 0.036138825689629235
+        },
+        {
+            "rank": 4,
+            "feature": "Continent",
+            "mean_importance": 0.02781381266687195,
+            "std_importance": 0.0604749093224153
+        },
+        {
+            "rank": 5,
+            "feature": "Diastolic BP",
+            "mean_importance": 0.027158578488999517,
+            "std_importance": 0.031471330771440986
+        },
+        {
+            "rank": 6,
+            "feature": "Cholesterol",
+            "mean_importance": 0.023908778165582567,
+            "std_importance": 0.020712797819691785
+        },
+        {
+            "rank": 7,
+            "feature": "Exercise Hours Per Week",
+            "mean_importance": 0.022333528847105155,
+            "std_importance": 0.018215688071239727
+        },
+        {
+            "rank": 8,
+            "feature": "Systolic BP",
+            "mean_importance": 0.021765816340830805,
+            "std_importance": 0.02026090123322523
+        },
+        {
+            "rank": 9,
+            "feature": "Obesity",
+            "mean_importance": 0.021746632410881622,
+            "std_importance": 0.042970996285358755
+        },
+        {
+            "rank": 10,
+            "feature": "Sedentary Hours Per Day",
+            "mean_importance": 0.021056155410277704,
+            "std_importance": 0.016914783113458152
+        },
+        {
+            "rank": 11,
+            "feature": "Sleep Hours Per Day",
+            "mean_importance": 0.02063359563089206,
+            "std_importance": 0.016423391411279683
+        },
+        {
+            "rank": 12,
+            "feature": "Heart Rate",
+            "mean_importance": 0.01997824931082041,
+            "std_importance": 0.014967296483280596
+        },
+        {
+            "rank": 13,
+            "feature": "Income",
+            "mean_importance": 0.01853123667702674,
+            "std_importance": 0.020270356836546197
+        },
+        {
+            "rank": 14,
+            "feature": "Alcohol Consumption",
+            "mean_importance": 0.01837644605927531,
+            "std_importance": 0.04173732651933133
+        },
+        {
+            "rank": 15,
+            "feature": "Diet",
+            "mean_importance": 0.017626466663982838,
+            "std_importance": 0.03428699406219333
+        },
+        {
+            "rank": 16,
+            "feature": "Age",
+            "mean_importance": 0.017493297583215835,
+            "std_importance": 0.014180063688481882
+        },
+        {
+            "rank": 17,
+            "feature": "Physical Activity Days Per Week",
+            "mean_importance": 0.016029470144690867,
+            "std_importance": 0.02003075462998263
+        },
+        {
+            "rank": 18,
+            "feature": "Triglycerides",
+            "mean_importance": 0.015082249298541437,
+            "std_importance": 0.012570798746885875
+        },
+        {
+            "rank": 19,
+            "feature": "Family History",
+            "mean_importance": 0.012968150636332512,
+            "std_importance": 0.01771919220121296
+        },
+        {
+            "rank": 20,
+            "feature": "Medication Use",
+            "mean_importance": 0.011060020244444824,
+            "std_importance": 0.012101257752673475
+        },
+        {
+            "rank": 21,
+            "feature": "Sex",
+            "mean_importance": 0.010691762248108961,
+            "std_importance": 0.017062363414719724
+        },
+        {
+            "rank": 22,
+            "feature": "Previous Heart Problems",
+            "mean_importance": 0.00787851487140069,
+            "std_importance": 0.01806913465127113
+        },
+        {
+            "rank": 23,
+            "feature": "Diabetes",
+            "mean_importance": 0.007442945181034321,
+            "std_importance": 0.012511849375663733
+        },
+        {
+            "rank": 24,
+            "feature": "Hemisphere",
+            "mean_importance": 0.00625340905778486,
+            "std_importance": 0.00640085637658785
+        },
+        {
+            "rank": 25,
+            "feature": "Smoking",
+            "mean_importance": 0.005748513120949515,
+            "std_importance": 0.009156407041474376
+        }
+    ],
+    "top_5": [
+        "Stress Level",
+        "Country",
+        "BMI",
+        "Continent",
+        "Diastolic BP"
+    ],
+    "top_10": [
+        "Stress Level",
+        "Country",
+        "BMI",
+        "Continent",
+        "Diastolic BP",
+        "Cholesterol",
+        "Exercise Hours Per Week",
+        "Systolic BP",
+        "Obesity",
+        "Sedentary Hours Per Day"
+    ]
+}

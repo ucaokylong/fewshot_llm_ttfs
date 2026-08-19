@@ -1,0 +1,89 @@
+{
+    "full_ranking": [
+        {
+            "rank": 1,
+            "feature": "ap_hi",
+            "mean_importance": 0.08477476937163395,
+            "std_importance": 0.06401464092054343
+        },
+        {
+            "rank": 2,
+            "feature": "age",
+            "mean_importance": 0.06502678796564328,
+            "std_importance": 0.051725285343143815
+        },
+        {
+            "rank": 3,
+            "feature": "weight",
+            "mean_importance": 0.06267107214623407,
+            "std_importance": 0.034411409768232364
+        },
+        {
+            "rank": 4,
+            "feature": "height",
+            "mean_importance": 0.059593768312050856,
+            "std_importance": 0.04812898777117277
+        },
+        {
+            "rank": 5,
+            "feature": "ap_lo",
+            "mean_importance": 0.05601638108959399,
+            "std_importance": 0.046590809546205876
+        },
+        {
+            "rank": 6,
+            "feature": "cholesterol",
+            "mean_importance": 0.03778879202313105,
+            "std_importance": 0.03771322496472629
+        },
+        {
+            "rank": 7,
+            "feature": "gender",
+            "mean_importance": 0.03241348459224199,
+            "std_importance": 0.02863544519243527
+        },
+        {
+            "rank": 8,
+            "feature": "active",
+            "mean_importance": 0.026350993283108092,
+            "std_importance": 0.04069309660864457
+        },
+        {
+            "rank": 9,
+            "feature": "gluc",
+            "mean_importance": 0.021369149593915077,
+            "std_importance": 0.023262159329547637
+        },
+        {
+            "rank": 10,
+            "feature": "smoke",
+            "mean_importance": 0.009348604278197097,
+            "std_importance": 0.011315947080055316
+        },
+        {
+            "rank": 11,
+            "feature": "alco",
+            "mean_importance": 0.003590256154511296,
+            "std_importance": 0.005229443968205241
+        }
+    ],
+    "top_5": [
+        "ap_hi",
+        "age",
+        "weight",
+        "height",
+        "ap_lo"
+    ],
+    "top_10": [
+        "ap_hi",
+        "age",
+        "weight",
+        "height",
+        "ap_lo",
+        "cholesterol",
+        "gender",
+        "active",
+        "gluc",
+        "smoke"
+    ]
+}
