@@ -1,0 +1,84 @@
+[*] Job Execution Started At: Mon 13 Jul 2026 11:35:00 PM JST
+[*] Python Runtime Path: /home/s2410433/miniconda3/envs/research_venv/bin/python
+[*] Bound SSL Certificate Path: /home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/certifi/cacert.pem
+Mon Jul 13 23:35:00 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 575.57.08              Driver Version: 575.57.08      CUDA Version: 12.9     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:CA:00.0 Off |                    0 |
+|  0%   19C    P8             20W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+==========================================================
+[RUNNING] XGBoost Full Feature Space Context Inference...
+==========================================================
+[*] Execution runtime device engine: CUDA
+[*] Slicing explicit validation data targets...
+[INFO] Candidate Resource Pool Size: 5278
+[INFO] Total Fixed Evaluation Target Samples: 1000
+[*] Synchronizing evaluation tracking space via: master_granular_indices_heart_attack.json
+
+============================================================
+>>> LAUNCHING XGBOOST PIPELINE: TOP5 (5 Features)
+============================================================
+
+>>> [XGBoost - top5] Evaluating scaling boundary: K=2
+Traceback (most recent call last):
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/data.py", line 408, in pandas_feature_info
+    new_feature_types.append(_pandas_dtype_mapper[dtype.name])
+KeyError: 'object'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/s2410433/diabetes_project/third_dataset/xgboost_fewshot_top5_10.py", line 107, in <module>
+    model.fit(X_train, y_train)
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/core.py", line 751, in inner_f
+    return func(**kwargs)
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/sklearn.py", line 1787, in fit
+    train_dmatrix, evals = _wrap_evaluation_matrices(
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/sklearn.py", line 700, in _wrap_evaluation_matrices
+    train_dmatrix = create_dmatrix(
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/sklearn.py", line 1257, in _create_dmatrix
+    return QuantileDMatrix(
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/core.py", line 751, in inner_f
+    return func(**kwargs)
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/core.py", line 1719, in __init__
+    self._init(
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/core.py", line 1783, in _init
+    it.reraise()
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/core.py", line 594, in reraise
+    raise exc  # pylint: disable=raising-bad-type
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/core.py", line 575, in _handle_exception
+    return fn()
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/core.py", line 662, in <lambda>
+    return self._handle_exception(lambda: int(self.next(input_data)), 0)
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/data.py", line 1642, in next
+    input_data(**self.kwargs)
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/core.py", line 751, in inner_f
+    return func(**kwargs)
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/core.py", line 642, in input_data
+    new, feature_names, feature_types = _proxy_transform(
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/data.py", line 1695, in _proxy_transform
+    df, feature_names, feature_types = _transform_pandas_df(
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/data.py", line 668, in _transform_pandas_df
+    feature_names, feature_types = pandas_feature_info(
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/data.py", line 410, in pandas_feature_info
+    _invalid_dataframe_dtype(data)
+  File "/home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/xgboost/data.py", line 373, in _invalid_dataframe_dtype
+    raise ValueError(msg)
+ValueError: DataFrame.dtypes for data must be int, float, bool or category. When categorical type is supplied, the experimental DMatrix parameter`enable_categorical` must be set to `True`.  Invalid columns:Country: object, Continent: object
+==========================================================
+[SUCCESS] Experimental evaluation sequence finalized at: Mon 13 Jul 2026 11:35:07 PM JST

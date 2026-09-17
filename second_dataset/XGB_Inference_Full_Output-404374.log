@@ -1,0 +1,67 @@
+[*] Job Execution Started At: Sun 05 Jul 2026 05:02:02 AM JST
+[*] Python Runtime Path: /home/s2410433/miniconda3/envs/research_venv/bin/python
+[*] Bound SSL Certificate Path: /home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/certifi/cacert.pem
+Sun Jul  5 05:02:02 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 575.57.08              Driver Version: 575.57.08      CUDA Version: 12.9     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:CA:00.0 Off |                    0 |
+|  0%   29C    P8             21W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+==========================================================
+[RUNNING] XGBoost Full Feature Space Context Inference...
+==========================================================
+[*] Execution runtime device: CUDA
+[*] Accessing pre-balanced dataset partitions...
+[INFO] Candidate Resource Pool Size: 714
+[INFO] Total Fixed Evaluation Target Samples: 400
+[*] Parsing unified evaluation matrix: master_granular_indices_framingham.json
+
+>>> [XGBoost] Evaluating scaling boundary: K=2
+    K=2 | Iteration 1/20 finalized.    K=2 | Iteration 2/20 finalized.    K=2 | Iteration 3/20 finalized.    K=2 | Iteration 4/20 finalized.    K=2 | Iteration 5/20 finalized.    K=2 | Iteration 6/20 finalized.    K=2 | Iteration 7/20 finalized.    K=2 | Iteration 8/20 finalized.    K=2 | Iteration 9/20 finalized.    K=2 | Iteration 10/20 finalized.    K=2 | Iteration 11/20 finalized.    K=2 | Iteration 12/20 finalized.    K=2 | Iteration 13/20 finalized.    K=2 | Iteration 14/20 finalized.    K=2 | Iteration 15/20 finalized.    K=2 | Iteration 16/20 finalized.    K=2 | Iteration 17/20 finalized.    K=2 | Iteration 18/20 finalized.    K=2 | Iteration 19/20 finalized.    K=2 | Iteration 20/20 finalized.
+[SUCCESS] Parametric tracking logs compiled at: framingham_xgboost_results_granular_k2.csv
+
+>>> [XGBoost] Evaluating scaling boundary: K=4
+    K=4 | Iteration 1/20 finalized.    K=4 | Iteration 2/20 finalized.    K=4 | Iteration 3/20 finalized.    K=4 | Iteration 4/20 finalized.    K=4 | Iteration 5/20 finalized.    K=4 | Iteration 6/20 finalized.    K=4 | Iteration 7/20 finalized.    K=4 | Iteration 8/20 finalized.    K=4 | Iteration 9/20 finalized.    K=4 | Iteration 10/20 finalized.    K=4 | Iteration 11/20 finalized.    K=4 | Iteration 12/20 finalized.    K=4 | Iteration 13/20 finalized.    K=4 | Iteration 14/20 finalized.    K=4 | Iteration 15/20 finalized.    K=4 | Iteration 16/20 finalized.    K=4 | Iteration 17/20 finalized.    K=4 | Iteration 18/20 finalized.    K=4 | Iteration 19/20 finalized.    K=4 | Iteration 20/20 finalized.
+[SUCCESS] Parametric tracking logs compiled at: framingham_xgboost_results_granular_k4.csv
+
+>>> [XGBoost] Evaluating scaling boundary: K=6
+    K=6 | Iteration 1/20 finalized.    K=6 | Iteration 2/20 finalized.    K=6 | Iteration 3/20 finalized.    K=6 | Iteration 4/20 finalized.    K=6 | Iteration 5/20 finalized.    K=6 | Iteration 6/20 finalized.    K=6 | Iteration 7/20 finalized.    K=6 | Iteration 8/20 finalized.    K=6 | Iteration 9/20 finalized.    K=6 | Iteration 10/20 finalized.    K=6 | Iteration 11/20 finalized.    K=6 | Iteration 12/20 finalized.    K=6 | Iteration 13/20 finalized.    K=6 | Iteration 14/20 finalized.    K=6 | Iteration 15/20 finalized.    K=6 | Iteration 16/20 finalized.    K=6 | Iteration 17/20 finalized.    K=6 | Iteration 18/20 finalized.    K=6 | Iteration 19/20 finalized.    K=6 | Iteration 20/20 finalized.
+[SUCCESS] Parametric tracking logs compiled at: framingham_xgboost_results_granular_k6.csv
+
+>>> [XGBoost] Evaluating scaling boundary: K=8
+    K=8 | Iteration 1/20 finalized.    K=8 | Iteration 2/20 finalized.    K=8 | Iteration 3/20 finalized.    K=8 | Iteration 4/20 finalized.    K=8 | Iteration 5/20 finalized.    K=8 | Iteration 6/20 finalized.    K=8 | Iteration 7/20 finalized.    K=8 | Iteration 8/20 finalized.    K=8 | Iteration 9/20 finalized.    K=8 | Iteration 10/20 finalized.    K=8 | Iteration 11/20 finalized.    K=8 | Iteration 12/20 finalized.    K=8 | Iteration 13/20 finalized.    K=8 | Iteration 14/20 finalized.    K=8 | Iteration 15/20 finalized.    K=8 | Iteration 16/20 finalized.    K=8 | Iteration 17/20 finalized.    K=8 | Iteration 18/20 finalized.    K=8 | Iteration 19/20 finalized.    K=8 | Iteration 20/20 finalized.
+[SUCCESS] Parametric tracking logs compiled at: framingham_xgboost_results_granular_k8.csv
+
+>>> [XGBoost] Evaluating scaling boundary: K=10
+    K=10 | Iteration 1/20 finalized.    K=10 | Iteration 2/20 finalized.    K=10 | Iteration 3/20 finalized.    K=10 | Iteration 4/20 finalized.    K=10 | Iteration 5/20 finalized.    K=10 | Iteration 6/20 finalized.    K=10 | Iteration 7/20 finalized.    K=10 | Iteration 8/20 finalized.    K=10 | Iteration 9/20 finalized.    K=10 | Iteration 10/20 finalized.    K=10 | Iteration 11/20 finalized.    K=10 | Iteration 12/20 finalized.    K=10 | Iteration 13/20 finalized.    K=10 | Iteration 14/20 finalized.    K=10 | Iteration 15/20 finalized.    K=10 | Iteration 16/20 finalized.    K=10 | Iteration 17/20 finalized.    K=10 | Iteration 18/20 finalized.    K=10 | Iteration 19/20 finalized.    K=10 | Iteration 20/20 finalized.
+[SUCCESS] Parametric tracking logs compiled at: framingham_xgboost_results_granular_k10.csv
+
+>>> [XGBoost] Evaluating scaling boundary: K=12
+    K=12 | Iteration 1/20 finalized.    K=12 | Iteration 2/20 finalized.    K=12 | Iteration 3/20 finalized.    K=12 | Iteration 4/20 finalized.    K=12 | Iteration 5/20 finalized.    K=12 | Iteration 6/20 finalized.    K=12 | Iteration 7/20 finalized.    K=12 | Iteration 8/20 finalized.    K=12 | Iteration 9/20 finalized.    K=12 | Iteration 10/20 finalized.    K=12 | Iteration 11/20 finalized.    K=12 | Iteration 12/20 finalized.    K=12 | Iteration 13/20 finalized.    K=12 | Iteration 14/20 finalized.    K=12 | Iteration 15/20 finalized.    K=12 | Iteration 16/20 finalized.    K=12 | Iteration 17/20 finalized.    K=12 | Iteration 18/20 finalized.    K=12 | Iteration 19/20 finalized.    K=12 | Iteration 20/20 finalized.
+[SUCCESS] Parametric tracking logs compiled at: framingham_xgboost_results_granular_k12.csv
+
+>>> [XGBoost] Evaluating scaling boundary: K=14
+    K=14 | Iteration 1/20 finalized.    K=14 | Iteration 2/20 finalized.    K=14 | Iteration 3/20 finalized.    K=14 | Iteration 4/20 finalized.    K=14 | Iteration 5/20 finalized.    K=14 | Iteration 6/20 finalized.    K=14 | Iteration 7/20 finalized.    K=14 | Iteration 8/20 finalized.    K=14 | Iteration 9/20 finalized.    K=14 | Iteration 10/20 finalized.    K=14 | Iteration 11/20 finalized.    K=14 | Iteration 12/20 finalized.    K=14 | Iteration 13/20 finalized.    K=14 | Iteration 14/20 finalized.    K=14 | Iteration 15/20 finalized.    K=14 | Iteration 16/20 finalized.    K=14 | Iteration 17/20 finalized.    K=14 | Iteration 18/20 finalized.    K=14 | Iteration 19/20 finalized.    K=14 | Iteration 20/20 finalized.
+[SUCCESS] Parametric tracking logs compiled at: framingham_xgboost_results_granular_k14.csv
+
+>>> [XGBoost] Evaluating scaling boundary: K=16
+    K=16 | Iteration 1/20 finalized.    K=16 | Iteration 2/20 finalized.    K=16 | Iteration 3/20 finalized.    K=16 | Iteration 4/20 finalized.    K=16 | Iteration 5/20 finalized.    K=16 | Iteration 6/20 finalized.    K=16 | Iteration 7/20 finalized.    K=16 | Iteration 8/20 finalized.    K=16 | Iteration 9/20 finalized.    K=16 | Iteration 10/20 finalized.    K=16 | Iteration 11/20 finalized.    K=16 | Iteration 12/20 finalized.    K=16 | Iteration 13/20 finalized.    K=16 | Iteration 14/20 finalized.    K=16 | Iteration 15/20 finalized.    K=16 | Iteration 16/20 finalized.    K=16 | Iteration 17/20 finalized.    K=16 | Iteration 18/20 finalized.    K=16 | Iteration 19/20 finalized.    K=16 | Iteration 20/20 finalized.
+[SUCCESS] Parametric tracking logs compiled at: framingham_xgboost_results_granular_k16.csv
+
+[FINISH] Full feature array evaluation pipeline completed for XGBoost.
+==========================================================
+[SUCCESS] Experimental evaluation sequence finalized at: Sun 05 Jul 2026 05:02:32 AM JST

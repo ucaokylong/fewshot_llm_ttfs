@@ -1,0 +1,106 @@
+[*] Thoi gian bat dau: Sun 14 Jun 2026 08:49:49 AM JST
+[*] Python dang dung: /home/s2410433/miniconda3/envs/research_venv/bin/python
+[*] SSL Cert dang dung: /home/s2410433/miniconda3/envs/research_venv/lib/python3.10/site-packages/certifi/cacert.pem
+Sun Jun 14 08:49:49 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 575.57.08              Driver Version: 575.57.08      CUDA Version: 12.9     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:CA:00.0 Off |                    0 |
+|  0%   30C    P8             21W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+==========================================================
+[RUNNING] TabPFN Granular Evaluation...
+==========================================================
+[*] Đang chạy TabPFN Baselines trên thiết bị: CUDA
+[*] Đã nhận diện file index có sẵn: master_granular_indices.json
+
+==================================================
+>>> BẮT ĐẦU CHẠY TABPFN PHIÊN BẢN: TOP5 (5 Features)
+==================================================
+
+>>> [TabPFN - top5] Đang xử lý mốc K=2
+K=2 | Iteration 1/20 hoàn tất.K=2 | Iteration 2/20 hoàn tất.K=2 | Iteration 3/20 hoàn tất.K=2 | Iteration 4/20 hoàn tất.K=2 | Iteration 5/20 hoàn tất.K=2 | Iteration 6/20 hoàn tất.K=2 | Iteration 7/20 hoàn tất.K=2 | Iteration 8/20 hoàn tất.K=2 | Iteration 9/20 hoàn tất.K=2 | Iteration 10/20 hoàn tất.K=2 | Iteration 11/20 hoàn tất.K=2 | Iteration 12/20 hoàn tất.K=2 | Iteration 13/20 hoàn tất.K=2 | Iteration 14/20 hoàn tất.K=2 | Iteration 15/20 hoàn tất.K=2 | Iteration 16/20 hoàn tất.K=2 | Iteration 17/20 hoàn tất.K=2 | Iteration 18/20 hoàn tất.K=2 | Iteration 19/20 hoàn tất.K=2 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=2 cho top5 đã được lưu an toàn.
+
+>>> [TabPFN - top5] Đang xử lý mốc K=4
+K=4 | Iteration 1/20 hoàn tất.K=4 | Iteration 2/20 hoàn tất.K=4 | Iteration 3/20 hoàn tất.K=4 | Iteration 4/20 hoàn tất.K=4 | Iteration 5/20 hoàn tất.K=4 | Iteration 6/20 hoàn tất.K=4 | Iteration 7/20 hoàn tất.K=4 | Iteration 8/20 hoàn tất.K=4 | Iteration 9/20 hoàn tất.K=4 | Iteration 10/20 hoàn tất.K=4 | Iteration 11/20 hoàn tất.K=4 | Iteration 12/20 hoàn tất.K=4 | Iteration 13/20 hoàn tất.K=4 | Iteration 14/20 hoàn tất.K=4 | Iteration 15/20 hoàn tất.K=4 | Iteration 16/20 hoàn tất.K=4 | Iteration 17/20 hoàn tất.K=4 | Iteration 18/20 hoàn tất.K=4 | Iteration 19/20 hoàn tất.K=4 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=4 cho top5 đã được lưu an toàn.
+
+>>> [TabPFN - top5] Đang xử lý mốc K=6
+K=6 | Iteration 1/20 hoàn tất.K=6 | Iteration 2/20 hoàn tất.K=6 | Iteration 3/20 hoàn tất.K=6 | Iteration 4/20 hoàn tất.K=6 | Iteration 5/20 hoàn tất.K=6 | Iteration 6/20 hoàn tất.K=6 | Iteration 7/20 hoàn tất.K=6 | Iteration 8/20 hoàn tất.K=6 | Iteration 9/20 hoàn tất.K=6 | Iteration 10/20 hoàn tất.K=6 | Iteration 11/20 hoàn tất.K=6 | Iteration 12/20 hoàn tất.K=6 | Iteration 13/20 hoàn tất.K=6 | Iteration 14/20 hoàn tất.K=6 | Iteration 15/20 hoàn tất.K=6 | Iteration 16/20 hoàn tất.K=6 | Iteration 17/20 hoàn tất.K=6 | Iteration 18/20 hoàn tất.K=6 | Iteration 19/20 hoàn tất.K=6 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=6 cho top5 đã được lưu an toàn.
+
+>>> [TabPFN - top5] Đang xử lý mốc K=8
+K=8 | Iteration 1/20 hoàn tất.K=8 | Iteration 2/20 hoàn tất.K=8 | Iteration 3/20 hoàn tất.K=8 | Iteration 4/20 hoàn tất.K=8 | Iteration 5/20 hoàn tất.K=8 | Iteration 6/20 hoàn tất.K=8 | Iteration 7/20 hoàn tất.K=8 | Iteration 8/20 hoàn tất.K=8 | Iteration 9/20 hoàn tất.K=8 | Iteration 10/20 hoàn tất.K=8 | Iteration 11/20 hoàn tất.K=8 | Iteration 12/20 hoàn tất.K=8 | Iteration 13/20 hoàn tất.K=8 | Iteration 14/20 hoàn tất.K=8 | Iteration 15/20 hoàn tất.K=8 | Iteration 16/20 hoàn tất.K=8 | Iteration 17/20 hoàn tất.K=8 | Iteration 18/20 hoàn tất.K=8 | Iteration 19/20 hoàn tất.K=8 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=8 cho top5 đã được lưu an toàn.
+
+>>> [TabPFN - top5] Đang xử lý mốc K=10
+K=10 | Iteration 1/20 hoàn tất.K=10 | Iteration 2/20 hoàn tất.K=10 | Iteration 3/20 hoàn tất.K=10 | Iteration 4/20 hoàn tất.K=10 | Iteration 5/20 hoàn tất.K=10 | Iteration 6/20 hoàn tất.K=10 | Iteration 7/20 hoàn tất.K=10 | Iteration 8/20 hoàn tất.K=10 | Iteration 9/20 hoàn tất.K=10 | Iteration 10/20 hoàn tất.K=10 | Iteration 11/20 hoàn tất.K=10 | Iteration 12/20 hoàn tất.K=10 | Iteration 13/20 hoàn tất.K=10 | Iteration 14/20 hoàn tất.K=10 | Iteration 15/20 hoàn tất.K=10 | Iteration 16/20 hoàn tất.K=10 | Iteration 17/20 hoàn tất.K=10 | Iteration 18/20 hoàn tất.K=10 | Iteration 19/20 hoàn tất.K=10 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=10 cho top5 đã được lưu an toàn.
+
+>>> [TabPFN - top5] Đang xử lý mốc K=12
+K=12 | Iteration 1/20 hoàn tất.K=12 | Iteration 2/20 hoàn tất.K=12 | Iteration 3/20 hoàn tất.K=12 | Iteration 4/20 hoàn tất.K=12 | Iteration 5/20 hoàn tất.K=12 | Iteration 6/20 hoàn tất.K=12 | Iteration 7/20 hoàn tất.K=12 | Iteration 8/20 hoàn tất.K=12 | Iteration 9/20 hoàn tất.K=12 | Iteration 10/20 hoàn tất.K=12 | Iteration 11/20 hoàn tất.K=12 | Iteration 12/20 hoàn tất.K=12 | Iteration 13/20 hoàn tất.K=12 | Iteration 14/20 hoàn tất.K=12 | Iteration 15/20 hoàn tất.K=12 | Iteration 16/20 hoàn tất.K=12 | Iteration 17/20 hoàn tất.K=12 | Iteration 18/20 hoàn tất.K=12 | Iteration 19/20 hoàn tất.K=12 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=12 cho top5 đã được lưu an toàn.
+
+>>> [TabPFN - top5] Đang xử lý mốc K=14
+K=14 | Iteration 1/20 hoàn tất.K=14 | Iteration 2/20 hoàn tất.K=14 | Iteration 3/20 hoàn tất.K=14 | Iteration 4/20 hoàn tất.K=14 | Iteration 5/20 hoàn tất.K=14 | Iteration 6/20 hoàn tất.K=14 | Iteration 7/20 hoàn tất.K=14 | Iteration 8/20 hoàn tất.K=14 | Iteration 9/20 hoàn tất.K=14 | Iteration 10/20 hoàn tất.K=14 | Iteration 11/20 hoàn tất.K=14 | Iteration 12/20 hoàn tất.K=14 | Iteration 13/20 hoàn tất.K=14 | Iteration 14/20 hoàn tất.K=14 | Iteration 15/20 hoàn tất.K=14 | Iteration 16/20 hoàn tất.K=14 | Iteration 17/20 hoàn tất.K=14 | Iteration 18/20 hoàn tất.K=14 | Iteration 19/20 hoàn tất.K=14 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=14 cho top5 đã được lưu an toàn.
+
+>>> [TabPFN - top5] Đang xử lý mốc K=16
+K=16 | Iteration 1/20 hoàn tất.K=16 | Iteration 2/20 hoàn tất.K=16 | Iteration 3/20 hoàn tất.K=16 | Iteration 4/20 hoàn tất.K=16 | Iteration 5/20 hoàn tất.K=16 | Iteration 6/20 hoàn tất.K=16 | Iteration 7/20 hoàn tất.K=16 | Iteration 8/20 hoàn tất.K=16 | Iteration 9/20 hoàn tất.K=16 | Iteration 10/20 hoàn tất.K=16 | Iteration 11/20 hoàn tất.K=16 | Iteration 12/20 hoàn tất.K=16 | Iteration 13/20 hoàn tất.K=16 | Iteration 14/20 hoàn tất.K=16 | Iteration 15/20 hoàn tất.K=16 | Iteration 16/20 hoàn tất.K=16 | Iteration 17/20 hoàn tất.K=16 | Iteration 18/20 hoàn tất.K=16 | Iteration 19/20 hoàn tất.K=16 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=16 cho top5 đã được lưu an toàn.
+
+==================================================
+>>> BẮT ĐẦU CHẠY TABPFN PHIÊN BẢN: TOP10 (10 Features)
+==================================================
+
+>>> [TabPFN - top10] Đang xử lý mốc K=2
+K=2 | Iteration 1/20 hoàn tất.K=2 | Iteration 2/20 hoàn tất.K=2 | Iteration 3/20 hoàn tất.K=2 | Iteration 4/20 hoàn tất.K=2 | Iteration 5/20 hoàn tất.K=2 | Iteration 6/20 hoàn tất.K=2 | Iteration 7/20 hoàn tất.K=2 | Iteration 8/20 hoàn tất.K=2 | Iteration 9/20 hoàn tất.K=2 | Iteration 10/20 hoàn tất.K=2 | Iteration 11/20 hoàn tất.K=2 | Iteration 12/20 hoàn tất.K=2 | Iteration 13/20 hoàn tất.K=2 | Iteration 14/20 hoàn tất.K=2 | Iteration 15/20 hoàn tất.K=2 | Iteration 16/20 hoàn tất.K=2 | Iteration 17/20 hoàn tất.K=2 | Iteration 18/20 hoàn tất.K=2 | Iteration 19/20 hoàn tất.K=2 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=2 cho top10 đã được lưu an toàn.
+
+>>> [TabPFN - top10] Đang xử lý mốc K=4
+K=4 | Iteration 1/20 hoàn tất.K=4 | Iteration 2/20 hoàn tất.K=4 | Iteration 3/20 hoàn tất.K=4 | Iteration 4/20 hoàn tất.K=4 | Iteration 5/20 hoàn tất.K=4 | Iteration 6/20 hoàn tất.K=4 | Iteration 7/20 hoàn tất.K=4 | Iteration 8/20 hoàn tất.K=4 | Iteration 9/20 hoàn tất.K=4 | Iteration 10/20 hoàn tất.K=4 | Iteration 11/20 hoàn tất.K=4 | Iteration 12/20 hoàn tất.K=4 | Iteration 13/20 hoàn tất.K=4 | Iteration 14/20 hoàn tất.K=4 | Iteration 15/20 hoàn tất.K=4 | Iteration 16/20 hoàn tất.K=4 | Iteration 17/20 hoàn tất.K=4 | Iteration 18/20 hoàn tất.K=4 | Iteration 19/20 hoàn tất.K=4 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=4 cho top10 đã được lưu an toàn.
+
+>>> [TabPFN - top10] Đang xử lý mốc K=6
+K=6 | Iteration 1/20 hoàn tất.K=6 | Iteration 2/20 hoàn tất.K=6 | Iteration 3/20 hoàn tất.K=6 | Iteration 4/20 hoàn tất.K=6 | Iteration 5/20 hoàn tất.K=6 | Iteration 6/20 hoàn tất.K=6 | Iteration 7/20 hoàn tất.K=6 | Iteration 8/20 hoàn tất.K=6 | Iteration 9/20 hoàn tất.K=6 | Iteration 10/20 hoàn tất.K=6 | Iteration 11/20 hoàn tất.K=6 | Iteration 12/20 hoàn tất.K=6 | Iteration 13/20 hoàn tất.K=6 | Iteration 14/20 hoàn tất.K=6 | Iteration 15/20 hoàn tất.K=6 | Iteration 16/20 hoàn tất.K=6 | Iteration 17/20 hoàn tất.K=6 | Iteration 18/20 hoàn tất.K=6 | Iteration 19/20 hoàn tất.K=6 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=6 cho top10 đã được lưu an toàn.
+
+>>> [TabPFN - top10] Đang xử lý mốc K=8
+K=8 | Iteration 1/20 hoàn tất.K=8 | Iteration 2/20 hoàn tất.K=8 | Iteration 3/20 hoàn tất.K=8 | Iteration 4/20 hoàn tất.K=8 | Iteration 5/20 hoàn tất.K=8 | Iteration 6/20 hoàn tất.K=8 | Iteration 7/20 hoàn tất.K=8 | Iteration 8/20 hoàn tất.K=8 | Iteration 9/20 hoàn tất.K=8 | Iteration 10/20 hoàn tất.K=8 | Iteration 11/20 hoàn tất.K=8 | Iteration 12/20 hoàn tất.K=8 | Iteration 13/20 hoàn tất.K=8 | Iteration 14/20 hoàn tất.K=8 | Iteration 15/20 hoàn tất.K=8 | Iteration 16/20 hoàn tất.K=8 | Iteration 17/20 hoàn tất.K=8 | Iteration 18/20 hoàn tất.K=8 | Iteration 19/20 hoàn tất.K=8 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=8 cho top10 đã được lưu an toàn.
+
+>>> [TabPFN - top10] Đang xử lý mốc K=10
+K=10 | Iteration 1/20 hoàn tất.K=10 | Iteration 2/20 hoàn tất.K=10 | Iteration 3/20 hoàn tất.K=10 | Iteration 4/20 hoàn tất.K=10 | Iteration 5/20 hoàn tất.K=10 | Iteration 6/20 hoàn tất.K=10 | Iteration 7/20 hoàn tất.K=10 | Iteration 8/20 hoàn tất.K=10 | Iteration 9/20 hoàn tất.K=10 | Iteration 10/20 hoàn tất.K=10 | Iteration 11/20 hoàn tất.K=10 | Iteration 12/20 hoàn tất.K=10 | Iteration 13/20 hoàn tất.K=10 | Iteration 14/20 hoàn tất.K=10 | Iteration 15/20 hoàn tất.K=10 | Iteration 16/20 hoàn tất.K=10 | Iteration 17/20 hoàn tất.K=10 | Iteration 18/20 hoàn tất.K=10 | Iteration 19/20 hoàn tất.K=10 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=10 cho top10 đã được lưu an toàn.
+
+>>> [TabPFN - top10] Đang xử lý mốc K=12
+K=12 | Iteration 1/20 hoàn tất.K=12 | Iteration 2/20 hoàn tất.K=12 | Iteration 3/20 hoàn tất.K=12 | Iteration 4/20 hoàn tất.K=12 | Iteration 5/20 hoàn tất.K=12 | Iteration 6/20 hoàn tất.K=12 | Iteration 7/20 hoàn tất.K=12 | Iteration 8/20 hoàn tất.K=12 | Iteration 9/20 hoàn tất.K=12 | Iteration 10/20 hoàn tất.K=12 | Iteration 11/20 hoàn tất.K=12 | Iteration 12/20 hoàn tất.K=12 | Iteration 13/20 hoàn tất.K=12 | Iteration 14/20 hoàn tất.K=12 | Iteration 15/20 hoàn tất.K=12 | Iteration 16/20 hoàn tất.K=12 | Iteration 17/20 hoàn tất.K=12 | Iteration 18/20 hoàn tất.K=12 | Iteration 19/20 hoàn tất.K=12 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=12 cho top10 đã được lưu an toàn.
+
+>>> [TabPFN - top10] Đang xử lý mốc K=14
+K=14 | Iteration 1/20 hoàn tất.K=14 | Iteration 2/20 hoàn tất.K=14 | Iteration 3/20 hoàn tất.K=14 | Iteration 4/20 hoàn tất.K=14 | Iteration 5/20 hoàn tất.K=14 | Iteration 6/20 hoàn tất.K=14 | Iteration 7/20 hoàn tất.K=14 | Iteration 8/20 hoàn tất.K=14 | Iteration 9/20 hoàn tất.K=14 | Iteration 10/20 hoàn tất.K=14 | Iteration 11/20 hoàn tất.K=14 | Iteration 12/20 hoàn tất.K=14 | Iteration 13/20 hoàn tất.K=14 | Iteration 14/20 hoàn tất.K=14 | Iteration 15/20 hoàn tất.K=14 | Iteration 16/20 hoàn tất.K=14 | Iteration 17/20 hoàn tất.K=14 | Iteration 18/20 hoàn tất.K=14 | Iteration 19/20 hoàn tất.K=14 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=14 cho top10 đã được lưu an toàn.
+
+>>> [TabPFN - top10] Đang xử lý mốc K=16
+K=16 | Iteration 1/20 hoàn tất.K=16 | Iteration 2/20 hoàn tất.K=16 | Iteration 3/20 hoàn tất.K=16 | Iteration 4/20 hoàn tất.K=16 | Iteration 5/20 hoàn tất.K=16 | Iteration 6/20 hoàn tất.K=16 | Iteration 7/20 hoàn tất.K=16 | Iteration 8/20 hoàn tất.K=16 | Iteration 9/20 hoàn tất.K=16 | Iteration 10/20 hoàn tất.K=16 | Iteration 11/20 hoàn tất.K=16 | Iteration 12/20 hoàn tất.K=16 | Iteration 13/20 hoàn tất.K=16 | Iteration 14/20 hoàn tất.K=16 | Iteration 15/20 hoàn tất.K=16 | Iteration 16/20 hoàn tất.K=16 | Iteration 17/20 hoàn tất.K=16 | Iteration 18/20 hoàn tất.K=16 | Iteration 19/20 hoàn tất.K=16 | Iteration 20/20 hoàn tất.
+[OK] Kết quả K=16 cho top10 đã được lưu an toàn.
+
+==================================================
+[FINISH] Toàn bộ dải Granular tĩnh cho TabPFN đã hoàn tất.
+==================================================
+==========================================================
+[SUCCESS] Toan bo thi nghiem hoan thanh luc: Sun 14 Jun 2026 08:52:52 AM JST

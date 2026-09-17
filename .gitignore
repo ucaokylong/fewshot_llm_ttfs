@@ -10,14 +10,14 @@ __pycache__/
 *.onnx
 
 # Chặn shell scripts
-*.sh
+# *.sh
 
 # Chặn môi trường, log và data
 wandb/
 runs/
 .env/
 venv/
-*.log
+# *.log
 data/
 datasets/
 
