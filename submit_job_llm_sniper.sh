@@ -54,7 +54,7 @@ echo "=========================================================="
 export BN_DISABLE_MALLOC_STATS=1
 
 # Chạy script với cờ -u (unbuffered) để log in ra file .log ngay lập tức
-python -u llm_sniper.py
+python -u diabetes_research.py
 
 echo "=========================================================="
 echo "[SUCCESS] Toan bo thi nghiem hoan thanh luc: $(date)"

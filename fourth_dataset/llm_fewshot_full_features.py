@@ -21,16 +21,14 @@ os.environ['REQUESTS_CA_BUNDLE'] = certifi.where()
 class ExperimentConfig:
     MODEL_ID = "Qwen/Qwen2.5-7B-Instruct"
     
-    # Path mappings synchronized with the new Cardiovascular data pipelines
     CANDIDATE_POOL_PATH = "cardio_candidate_balanced.csv"
     TEST_SET_PATH = "cardio_test_fixed.csv"
     INDICES_PATH = "master_granular_indices_cardio.json"
     
     ITERATIONS = 20
-    BATCH_SIZE = 20  # Optimized based on context window and VRAM limits
+    BATCH_SIZE = 16  # Chạy 16 prompt đơn song song trên GPU (có thể tăng lên 32 nếu VRAM đủ)
     K_VALUES = [2, 4, 6, 8, 10, 12, 14, 16]
     
-    # Exactly 11 raw features matching the Cardiovascular Disease schema
     FEATURES = [
         'age', 'gender', 'height', 'weight', 'ap_hi', 
         'ap_lo', 'cholesterol', 'gluc', 'smoke', 'alco', 'active'
@@ -55,6 +53,8 @@ def load_llm_pipeline():
         ExperimentConfig.MODEL_ID, 
         token=hf_token
     )
+    # Bắt buộc padding_side='left' khi chạy batch generation trên Causal LM
+    tokenizer.padding_side = "left"
     tokenizer.pad_token = tokenizer.eos_token
     
     model = AutoModelForCausalLM.from_pretrained(
@@ -67,76 +67,64 @@ def load_llm_pipeline():
     return tokenizer, model
 
 # ==========================================
-# 3. PROMPT GENERATION & PREDICTION PARSING
+# 3. PROMPT GENERATION (1 PROMPT / 1 PATIENT) & PARSING
 # ==========================================
-def create_medical_prompt(support_df, test_batch):
-    # Construct historical reference context (Few-shot samples)
+def create_single_patient_prompt(support_df, target_id, target_row):
+    """Xây dựng đúng 1 prompt y tế cho duy nhất 1 bệnh nhân cần test."""
     support_lines = []
     for _, row in support_df.iterrows():
         feat_strs = []
         for f in ExperimentConfig.FEATURES:
             val = row[f]
-            # Format integer vs float representation cleanly
             val_str = f"{int(val)}" if val == int(val) else f"{val:.2f}"
             feat_strs.append(f"{f}:{val_str}")
         
         feat_str = ", ".join(feat_strs)
         support_lines.append(f"Input: [{feat_str}] -> Result: {int(row[ExperimentConfig.TARGET])}")
+    support_context = chr(10).join(support_lines)
+
+    target_feat_strs = []
+    for f in ExperimentConfig.FEATURES:
+        val = target_row[f]
+        val_str = f"{int(val)}" if val == int(val) else f"{val:.2f}"
+        target_feat_strs.append(f"{f}:{val_str}")
     
-    # Construct current test instances to evaluate within the batch window
-    test_lines = []
-    for idx, row in test_batch.iterrows():
-        feat_strs = []
-        for f in ExperimentConfig.FEATURES:
-            val = row[f]
-            val_str = f"{int(val)}" if val == int(val) else f"{val:.2f}"
-            feat_strs.append(f"{f}:{val_str}")
-            
-        feat_str = ", ".join(feat_strs)
-        test_lines.append(f"ID:{idx} - [{feat_str}]")
-        
+    target_feat_str = ", ".join(target_feat_strs)
+    target_line = f"ID:{target_id} - [{target_feat_str}]"
+    
     prompt = f"""<|im_start|>system
 You are a medical expert system. Analyze the provided health parameters and evaluation records to predict the presence or absence of cardiovascular disease.
-Output MUST be a strictly formatted JSON array of objects: [{{"id": <ID>, "result": 0_or_1}}, ...].
-No conversational text, no explanations.<|im_end|>
+Output MUST be strictly JSON: {{"id": "{target_id}", "result": 0_or_1}}. No other text.<|im_end|>
 <|im_start|>user
 Historical Cases:
-{chr(10).join(support_lines)}
+{support_context}
 
-Current Patients to Evaluate:
-{chr(10).join(test_lines)}<|im_end|>
+Current Patient to Evaluate:
+{target_line}<|im_end|>
 <|im_start|>assistant
-["""
+{{"""
     return prompt
 
-def extract_predictions(raw_output, test_ids):
-    # Prepend the forced opening bracket skipped by the assistant configuration
-    full_text = "[" + raw_output
-    predictions = {}
-    
-    # Method 1: Robust JSON parsing approach
+def extract_single_prediction(raw_output, target_id):
+    """Bóc tách dự đoán dạng số (0 hoặc 1) từ JSON đơn."""
+    full_text = "{" + raw_output
     try:
-        match = re.search(r'\[.*\]', full_text, re.DOTALL)
+        match = re.search(r'\{.*?\}', full_text, re.DOTALL)
         if match:
             data = json.loads(match.group())
-            for item in data:
-                clean_id = str(int(float(item['id'])))
-                predictions[clean_id] = int(item['result'])
+            return int(data.get('result', -1))
     except:
-        # Method 2: Fallback regular expression parsing to preserve partial token prints
-        for tid in test_ids:
-            pattern = rf"{tid}\D*?(\d)"
-            m = re.search(pattern, full_text)
-            if m:
-                predictions[str(tid)] = int(m.group(1))
-                
-    return predictions
+        pass
+    
+    m = re.search(r'result"\s*:\s*(\d)', full_text, re.IGNORECASE)
+    if m:
+        return int(m.group(1))
+    return -1
 
 # ==========================================
 # 4. MAIN EXPERIMENTAL EXECUTION LOOP
 # ==========================================
 def run_experiment():
-    # 4.1 Load separate pre-balanced dataset pools directly
     print("[*] Accessing separate pre-balanced dataset files...")
     train_pool = pd.read_csv(ExperimentConfig.CANDIDATE_POOL_PATH)
     test_fixed = pd.read_csv(ExperimentConfig.TEST_SET_PATH)
@@ -145,25 +133,18 @@ def run_experiment():
     print(f"[INFO] Candidate Resource Pool Size: {train_pool.shape[0]}")
     print(f"[INFO] Total Fixed Evaluation Target Samples: {total_test_samples}")
     
-    # 4.2 Load master synchronization index registry
     if not os.path.exists(ExperimentConfig.INDICES_PATH):
-        raise FileNotFoundError(
-            f"[ERROR] Master index path not found at: {ExperimentConfig.INDICES_PATH}. "
-            f"Please run your step3 indexing script first."
-        )
+        raise FileNotFoundError(f"[ERROR] Master index path not found at: {ExperimentConfig.INDICES_PATH}")
         
     with open(ExperimentConfig.INDICES_PATH, 'r') as f:
         indices_map = json.load(f)
 
-    # 4.3 Load Model pipeline
     tokenizer, model = load_llm_pipeline()
 
-    # 4.4 Main parameter scaling execution loop
     for k in ExperimentConfig.K_VALUES:
         results_file = f'cardio_results_granular_k{k}.csv'
         start_iter = 0
         
-        # Checkpoint Management: Resume if matching execution logs exist on disk
         if os.path.exists(results_file):
             try:
                 existing_df = pd.read_csv(results_file, header=None)
@@ -176,41 +157,54 @@ def run_experiment():
                 pass
 
         for i in range(start_iter, ExperimentConfig.ITERATIONS):
-            print(f"\n[EXEC] Qwen Model | K={k} | Iteration {i+1}/{ExperimentConfig.ITERATIONS}")
+            print(f"\n[EXEC] Qwen Cardio Baseline | K={k} | Iteration {i+1}/{ExperimentConfig.ITERATIONS}")
             support_indices = indices_map[str(k)][i]
             support_df = train_pool.loc[support_indices]
             
             iteration_logs = []
             
-            # Execute batch evaluation step over the isolated test boundaries
             for b_start in tqdm(range(0, total_test_samples, ExperimentConfig.BATCH_SIZE), desc=f"K={k} Iter {i}"):
                 batch_df = test_fixed.iloc[b_start : b_start + ExperimentConfig.BATCH_SIZE]
-                prompt = create_medical_prompt(support_df, batch_df)
                 
-                # Context inference execution block
-                inputs = tokenizer(prompt, return_tensors="pt").to("cuda")
+                batch_prompts = []
+                batch_metadata = []
+                
+                # 1. Tạo danh sách các prompt riêng biệt
+                for idx, row in batch_df.iterrows():
+                    prompt = create_single_patient_prompt(support_df, idx, row)
+                    batch_prompts.append(prompt)
+                    batch_metadata.append((idx, int(row[ExperimentConfig.TARGET])))
+                
+                # 2. Tokenize song song có left-padding
+                inputs = tokenizer(batch_prompts, return_tensors="pt", padding=True, truncation=True).to("cuda")
+                
+                # 3. Model sinh token đồng loạt
                 with torch.no_grad():
                     outputs = model.generate(
                         **inputs,
-                        max_new_tokens=1500,
+                        max_new_tokens=20,  # Chỉ cần output JSON ngắn
                         temperature=0.01,
                         do_sample=False,
                         pad_token_id=tokenizer.eos_token_id
                     )
                 
-                raw_gen = tokenizer.decode(outputs[0][inputs.input_ids.shape[1]:], skip_special_tokens=True)
-                preds = extract_predictions(raw_gen, batch_df.index.astype(str).tolist())
+                # 4. Trích xuất kết quả từng prompt
+                input_length = inputs.input_ids.shape[1]
+                for p_idx, output in enumerate(outputs):
+                    raw_gen = tokenizer.decode(output[input_length:], skip_special_tokens=True)
+                    target_id, ground_truth = batch_metadata[p_idx]
+                    pred = extract_single_prediction(raw_gen, target_id)
+                    iteration_logs.append([i, target_id, ground_truth, pred])
                 
-                for idx, row in batch_df.iterrows():
-                    p = preds.get(str(idx), -1)  # Log -1 if an explicit parsing structure fault occurs
-                    iteration_logs.append([i, idx, int(row[ExperimentConfig.TARGET]), p])
+                # Dọn cache VRAM định kỳ
+                del inputs, outputs
+                torch.cuda.empty_cache()
             
-            # Flush iteration metrics to disk safely to secure intermediate progress
             pd.DataFrame(iteration_logs).to_csv(results_file, mode='a', header=False, index=False)
 
 if __name__ == "__main__":
     try:
         run_experiment()
-        print("\n" + "="*50 + "\n[SUCCESS] Cardiovascular dataset execution pipeline finalized.\n" + "="*50)
+        print("\n" + "="*50 + "\n[SUCCESS] Cardiovascular dataset execution finalized.\n" + "="*50)
     except Exception as e:
         print(f"\n[FATAL SYSTEM ERROR] {str(e)}")

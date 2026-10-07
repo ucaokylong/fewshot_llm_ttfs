@@ -55,7 +55,7 @@ export BN_DISABLE_MALLOC_STATS=1
 
 # Trigger full feature space evaluation script with unbuffered logging flag (-u)
 # python -u tabpfn_fewshot_full_features.py
-python -u TabPFN_top5_10.py
+python -u random_pruning.py
 
 echo "=========================================================="
 echo "[SUCCESS] Experimental evaluation sequence finalized at: $(date)"

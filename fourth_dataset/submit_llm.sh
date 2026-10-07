@@ -55,7 +55,7 @@ export BN_DISABLE_MALLOC_STATS=1
 
 # Trigger full feature space evaluation script with unbuffered logging flag
 # python -u llm_fewshot_full_features.py
-python -u llm_research_top5_10.py
+python -u llm_fewshot_full_features.py
 
 echo "=========================================================="
-echo "[SUCCESS] Experimental evaluation sequence finalized at: $(date)"
+echo "[SUCCESS] Experimental evaluation sequence finalized at: $(date)" 
